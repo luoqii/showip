@@ -16,29 +16,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        getIpStr();
+//        getIpStr();
     }
 
 
     String getIpStr(){
-        try {
-            Process p = new ProcessBuilder().command("sh getprop dhcp.eth0.ipaddress").start();
-            byte[] buffers = new byte[64];
-            p.getOutputStream().write(buffers);
-            return new String(buffers);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Process p = new ProcessBuilder().command("sh netcfg | grep \"eth0\"").start();
-            byte[] buffers = new byte[64];
-            p.getOutputStream().write(buffers);
-            return new String(buffers);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Process p = new ProcessBuilder().command("sh getprop dhcp.eth0.ipaddress").start();
+//            byte[] buffers = new byte[64];
+//            p.getOutputStream().write(buffers);
+//            return new String(buffers);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            Process p = new ProcessBuilder().command("sh netcfg | grep \"eth0\"").start();
+//            byte[] buffers = new byte[64];
+//            p.getOutputStream().write(buffers);
+//            return new String(buffers);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-        ShellUtils.CommandResult r = ShellUtils.execCommand("netcfg | grep \"eth0\"\"", false);
+        ShellUtils.CommandResult r = null;
+        r = ShellUtils.execCommand("netcfg | grep \"eth0\"\"", true);
         Log.d(TAG, "r: " + r);
         r = ShellUtils.execCommand("getprop dhcp.eth0.ipaddress", false);
         Log.d(TAG, "r: " + r);
