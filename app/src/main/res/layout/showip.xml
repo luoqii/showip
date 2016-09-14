@@ -6,6 +6,7 @@
     <TextView
         android:id="@+id/ip"
         android:text="ip:"
+        android:textSize="24sp"
         android:textColor="@color/android_comm_lib_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

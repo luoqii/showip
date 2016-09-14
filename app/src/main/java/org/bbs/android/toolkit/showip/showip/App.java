@@ -21,11 +21,13 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        PersistService.start(this);
         mWindow = new Window(this);
         mWindow = new Window(this);
         mWindow.setContentView(R.layout.showip);
         mWindow.show();
+
+
     }
 
     public static class Window extends  AlwaysOnTopWindow {
