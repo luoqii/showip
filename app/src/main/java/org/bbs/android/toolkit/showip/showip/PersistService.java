@@ -18,8 +18,8 @@ import java.util.TimerTask;
 public class PersistService extends Service {
     private static final long INTERVAL = 7 * 1000;
     private static final String TAG = PersistService.class.getSimpleName();
-    private int mCount;
 
+    private int mCount;
 
     public static void start(Context context){
         context.startService(new Intent(context, PersistService.class));
