@@ -3,7 +3,8 @@ package org.bbs.android.toolkit.showip.showip;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
+import org.bbs.android.log.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,6 +18,7 @@ public class BR extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d(TAG, "onReceive. intent:" + intent);
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
